@@ -26,7 +26,7 @@ namespace intro_LoginExam_v1.Models
 		[Required(ErrorMessage = "{0} alanı boş olamaz.")]
 		[DataType(DataType.Password)]
 		//en az 2 rakam, maks 10 elamn, min 1 tane özel , min 1 büyük harf
-		[RegularExpression(@"^(?=(.*\d){2,})(?=.*[\W_])(?=.*[A-Z]).{1,10}$")]
+		[RegularExpression(@"^(?=(.*\d){2,})(?=.*[\W_])(?=.*[A-Z]).{1,10}$",ErrorMessage ="Kkullanıcı şifre hatalı")]
 		[StringLength(10, ErrorMessage ="{0} alanı {1} karakterden az olamaz.")]
 		public string KullaniciSifre { get; set; }
 
