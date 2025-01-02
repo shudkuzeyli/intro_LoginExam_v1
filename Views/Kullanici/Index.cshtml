@@ -1,0 +1,48 @@
+﻿@model IEnumerable<intro_LoginExam_v1.Models.Kullanici>
+
+<div class="row">
+	<div class="col-xxl-12">
+		<div class="card card-xxl-stretch mb-5 mb-xl-8">
+			<!--Card Header-->
+			<div class="card-header border-0 mb-xl-8">
+				<h3 class="card-title align-items-start flex-column">
+					Kullanici Liste
+				</h3>
+				<div class="card-toolbar" data-bs-toogle="tooltip" data-bs-placement="top">
+					<a asp-action="Create" class="btn btn-light-primary"><i class="fa fa-plus"></i> Yeni Kullanıcı</a>
+				</div>
+			</div>
+			<div class="card-body py-3">
+				<table class="table table-striped table-row-bordered gy-5 gs-7 dt-init">
+					<thead>
+						<tr>
+							<th>İşlemler</th>
+							<th>@Html.DisplayNameFor(Model=>Model.AdSoyad)</th>
+							<th>@Html.DisplayNameFor(Model => Model.EMail)</th>
+							<th>@Html.DisplayNameFor(Model => Model.KullaniciKodu)</th>
+							<th>@Html.DisplayNameFor(Model => Model.Yas)</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach(var item in Model)
+						{
+							<tr>
+								<td>
+									<a asp-action="Edit" asp-route-id="@item.Id" data-toogle="tooltip" title="Düzenle"><i class="fa fa-text-height" aria-hidden="true"></i></a>
+									<a asp-action="Detail" asp-route-id="@item.Id" data-toogle="tooltip" title="Detay Gör"><i class="fa fa-id-card" aria-hidden="true"></i></a>
+									<a asp-action="Delete" asp-route-id="@item.Id" data-toogle="tooltip" title="Sil"><i class="fa fa-trash" aria-hidden="true"></i></a>
+								</td>
+								<td>@Html.DisplayFor(modelItem=>item.AdSoyad)</td>
+								<td>@Html.DisplayFor(modelItem => item.EMail)</td>
+								<td>@Html.DisplayFor(modelItem => item.KullaniciKodu)</td>
+								<td>@Html.DisplayFor(modelItem => item.Yas)</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+
+	</div>
+</div>
