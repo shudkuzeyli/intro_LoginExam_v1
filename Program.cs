@@ -1,3 +1,4 @@
+using intro_LoginExam_v1.Business;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,9 @@ options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("DbConStr"));
 }
 );
+
+
+builder.Services.AddScoped<Userservices>();
 
 var app = builder.Build();
 
