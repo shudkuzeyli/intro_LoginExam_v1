@@ -26,11 +26,14 @@ namespace intro_LoginExam_v1.Models
 		[Required(ErrorMessage = "{0} alanı boş olamaz.")]
 		[DataType(DataType.Password)]
 		//en az 2 rakam, maks 10 elamn, min 1 tane özel , min 1 büyük harf
-		[RegularExpression(@"^(?=(.*\d){2,})(?=.*[\W_])(?=.*[A-Z]).{1,10}$",ErrorMessage ="Kkullanıcı şifre hatalı")]
+		//[RegularExpression(@"^(?=(.*\d){2,})(?=.*[\W_])(?=.*[A-Z]).{1,10}$",ErrorMessage ="Kullanıcı şifre hatalı")]
 		[StringLength(10, ErrorMessage ="{0} alanı {1} karakterden az olamaz.")]
 		public string KullaniciSifre { get; set; }
 
+		[Display(Name = "Yaş")]
 		[RegularExpression("^[0-9]+$", ErrorMessage ="{0} alanına sadece sayısal değer yazabilirsiniz.")]
+		[Required (ErrorMessage ="{0} boş geçilemez.")]
+		[Range(18,180,ErrorMessage ="{0} en az 18 olmalı.")]
 		public string Yas { get; set; }//565464654
 
 
