@@ -208,5 +208,18 @@ namespace intro_LoginExam_v1.Controllers
 
 			return RedirectToAction(nameof(Index));
 		}
+
+		[HttpGet]
+		public IActionResult Detail(int? id)
+		{
+			if (id is null)
+				return RedirectToAction(nameof(Index));
+
+			var edit = _dataContext.Kullanici.Where(e => e.Id == id).FirstOrDefault();
+			if (edit is null)
+				return RedirectToAction(nameof(Index));
+
+			return View(edit);
+		}
 	}
 }
