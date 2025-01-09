@@ -1,0 +1,48 @@
+﻿@model intro_LoginExam_v1.Models.Kullanici
+
+<style>
+	.butonuSagaTasi {
+		display: flex;
+		justify-content: flex-end;
+		/* padding:10px; */
+		padding-right: 3px;
+		/* border:1px solid #ccc */
+	}
+</style>
+
+<form asp-controller="Kullanici" asp-action="Edit" method="post"> 
+	<div class="mb-3">
+			<label asp-for="AdSoyad" class="form-label"> Adı ve Soyadı</label>
+			<input asp-for="AdSoyad" class="form-control"/>
+			<span asp-validation-for="AdSoyad" class="text-danger"> </span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="EMail" class="form-label"></label>
+		<input asp-for="EMail" class="form-control" />
+		<span asp-validation-for="EMail" class="text-danger"> </span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="KullaniciKodu" class="form-label"></label>
+		<input asp-for="KullaniciKodu" class="form-control" />
+		<span asp-validation-for="KullaniciKodu" class="text-danger"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="KullaniciSifre" class="form-label"></label>
+		<input asp-for="KullaniciSifre" class="form-control" />
+		<span asp-validation-for="KullaniciSifre" class="text-danger"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="Yas" class="form-label"></label>
+		<input asp-for="Yas" class="form-control" />
+		<span asp-validation-for="Yas" class="text-danger"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="Aktif" class="form-label"></label>
+		<input asp-for="Aktif" class="form-check-input" />
+	</div>
+	<div class="butonuSagaTasi">
+		<a class="btn btn-secondary mr-5" asp-action="Index"><i class="fa fa-arrow-alt-circle-left"></i> Listeye geri dön</a>
+		<button type="submit" class="btn btn-success">Kaydet</button>
+	</div>
+
+</form>
